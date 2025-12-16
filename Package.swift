@@ -58,7 +58,7 @@ let package = Package(
         // AzureCommunicationCalling (Binary)
         .binaryTarget(
             name: "AzureCommunicationCalling",
-            url: "https://github.com/Azure/Communication/releases/download/v2.17.0-beta.3/AzureCommunicationCalling-2.17.0-beta.3.zip",
+            url: "https://github.com/Azure/Communication/releases/download/v2.16.0/AzureCommunicationCalling-2.16.0.zip",
             checksum: "249b327eaf8a7e1eaaf6b409a107d87e620417bc130c7e9f3a6e2eefceed845a"
         ),
 
@@ -72,7 +72,7 @@ let package = Package(
         // AzureCommunicationChat (Source)
         .target(
             name: "AzureCommunicationChat",
-            dependencies: ["AzureCore", "AzureCommunicationCommon"],
+            dependencies: ["AzureCore", "AzureCommunicationCommon", "Trouter"],
             path: "sdk/communication/AzureCommunicationChat/Source",
             exclude: [
                 "README.md",
