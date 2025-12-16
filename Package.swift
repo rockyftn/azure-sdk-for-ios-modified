@@ -32,7 +32,7 @@ import PackageDescription
 let package = Package(
     name: "AzureSDK",
     platforms: [
-        .macOS(.v10_15), .iOS(.v12), .tvOS(.v12)
+        .macOS(.v10_15), .iOS(.v14), .tvOS(.v12)
     ],
     products: [
         .library(name: "AzureCore", targets: ["AzureCore"]),
