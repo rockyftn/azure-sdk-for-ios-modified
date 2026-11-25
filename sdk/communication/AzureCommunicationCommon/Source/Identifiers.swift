@@ -103,7 +103,7 @@ public func createCommunicationIdentifier(fromRawId rawId: String) -> Communicat
     case Prefix.AcsUser,
          Prefix.AcsUserDodCloud,
          Prefix.AcsUserGcchCloud:
-        return buildCorrectCommunicationIdentifier(prefix: scope, suffix: suffix)
+        return buildCorrectCommunicationIdentifier(prefix: String(scope), suffix: suffix)
     default:
         return UnknownIdentifier(rawId)
     }
@@ -261,7 +261,7 @@ private func buildCorrectCommunicationIdentifier(prefix: String, suffix: String)
     public private(set) var rawId: String
     public var kind: IdentifierKind { return .microsoftTeamsUser }
     @available(*, deprecated, renamed: "cloudEnvironment")
-    public let cloudEnviroment: CommunicationCloudEnvironment
+    public var cloudEnviroment: CommunicationCloudEnvironment { return cloudEnvironment }
     public let cloudEnvironment: CommunicationCloudEnvironment
 
     /**
@@ -283,7 +283,6 @@ private func buildCorrectCommunicationIdentifier(prefix: String, suffix: String)
         self.userId = userId
         self.isAnonymous = isAnonymous
         self.cloudEnvironment = cloudEnvironment
-        self.cloudEnviroment = cloudEnvironment
         if let rawId = rawId {
             self.rawId = rawId
         } else {

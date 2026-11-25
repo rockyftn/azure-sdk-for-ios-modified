@@ -9,7 +9,7 @@ parameters:
 
 stages:
 
-  # We generate two interdepdent stages for each artifact listed in the ci.yml file, creates the release
+  # We generate two interdependent stages for each artifact listed in the ci.yml file, creates the release
   # in GitHub. The Release stage publishes to CocoaPods trunk. Both stages require approval since they
   # effectively burn the version number. For testing of packages prior to burning the version number -
   # the Validation step below publishes a package to a "burner" feed which is cleaned up after the
@@ -57,31 +57,33 @@ stages:
                   ArtifactLocation: $(System.DefaultWorkingDirectory)/sdk/${{parameters.ServiceDirectory}}/${{artifact.name}}
                   PackageRepository: CocoaPods
                   ReleaseSha: $(Build.SourceVersion)
+                  AuthToken: ''
 
-          - job: PublishPackageToCocoaPodsTrunk
-            displayName: "Publish to CocoaPods Trunk"
-            condition: and(succeeded(), ne(variables['Skip.PublishPackage'], 'true'))
-            dependsOn: TagRepository
-            variables:
-              - template: ../variables/globals.yml
-            pool:
-              name: Azure Pipelines
-              vmImage: macOS-latest
-              os: macOS
-            steps:
-              - checkout: self
-              - script: |
-                  pod trunk me
-                  pod trunk push $(System.DefaultWorkingDirectory)/sdk/${{parameters.ServiceDirectory}}/${{artifact.name}}/${{artifact.name}}.podspec.json --synchronous --use-modular-headers --allow-warnings
-                env:
-                  COCOAPODS_TRUNK_TOKEN: $(azuresdk-cocoapods-trunk-token)
-                displayName: Push ${{artifact.name}} to CocoaPods Trunk
+          - ${{if ne(artifact.skipCocoaPods, 'true')}}:
+            - job: PublishPackageToCocoaPodsTrunk       
+              displayName: "Publish to CocoaPods Trunk"
+              condition: and(succeeded(), ne(variables['Skip.PublishPackage'], 'true'))
+              dependsOn: TagRepository
+              variables:
+                - template: ../variables/globals.yml
+              pool:
+                name: Azure Pipelines
+                vmImage: macOS-latest
+                os: macOS
+              steps:
+                - checkout: self
+                - script: |
+                    pod trunk me
+                    pod trunk push $(System.DefaultWorkingDirectory)/sdk/${{parameters.ServiceDirectory}}/${{artifact.name}}/${{artifact.name}}.podspec.json --synchronous --use-modular-headers --allow-warnings
+                  env:
+                    COCOAPODS_TRUNK_TOKEN: $(azuresdk-cocoapods-trunk-token)
+                  displayName: Push ${{artifact.name}} to CocoaPods Trunk
 
           - ${{if ne(artifact.skipSwiftPackageManager, 'true')}}:
             - job: PublishPackageToSwiftPackageManagerMirrors
               displayName: "Publish to SPM Mirrors"
               condition: and(succeeded(), ne(variables['Skip.PublishPackage'], 'true'))
-              dependsOn: PublishPackageToCocoaPodsTrunk
+              dependsOn: TagRepository
               variables:
                 - template: ../variables/globals.yml
               pool:

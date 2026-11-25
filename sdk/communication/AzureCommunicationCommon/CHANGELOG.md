@@ -1,5 +1,18 @@
 # Release History
 
+## 1.3.8 (2026-07-03)
+### Raised the minimum iOS deployment target from 12.0 to 15.0 to support Xcode 27+.
+
+## 1.3.7 (2026-12-06)
+### Addressed the code simulator code signing issue. 
+
+## 1.3.6 (2026-04-06)
+### Fixed the Package.swift binary URL format for Swift Package Manager compatibility in the 1.3.5 release. The binary still references the 1.3.5 XCFramework with no code changes. 
+### Fixed CFBundleExecutable key Info.plist
+
+## 1.3.5 (2025-20-04)
+### No major changes
+
 ## 1.3.3 (2025-11-05)
 ### Changes
 - Fixed Package.swift binary URL format for Swift Package Manager compatibility

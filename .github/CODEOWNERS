@@ -9,36 +9,33 @@
 # /**
 # /AzureSDK.xcworkspace/
 
-###########
-# SDK
-###########
+####################
+# Client Libraries
+####################
 
-# Catch all
-/sdk/                                               @mayurid
-
-# Service teams
+/sdk/                                                              @mayurid
 
 # PRLabel: %Azure.Core
-/sdk/core/                                          @tjprescott
-
-# PRLabel: %Communication
-/sdk/communication/                                 @Azure/azure-sdk-communication-code-reviewers
-
-# PRLabel: %Communication - Common
-/sdk/communication/AzureCommunicationCommon/        @AikoBB @maximrytych-ms @mjafferi-msft
+/sdk/core/                                                         @tjprescott
 
 # PRLabel: %Azure.Identity
-/sdk/identity/                                      @tjprescott
+/sdk/identity/                                                     @tjprescott
+
+# PRLabel: %Communication
+/sdk/communication/                                                @Azure/azure-sdk-communication-code-reviewers
+
+# PRLabel: %Communication - Common
+/sdk/communication/AzureCommunicationCommon/                       @AikoBB @maximrytych-ms @mjafferi-msft
 
 # PRLabel: %EngSys
-/sdk/template/                                      @benbp @weshaggard
+/sdk/template/                                                     @Azure/azure-sdk-eng
 
 ###########
 # Eng Sys
 ###########
-/eng/                                               @benbp @weshaggard
-/eng/common/                                        @Azure/azure-sdk-eng
-/.config/1espt/                                     @benbp @weshaggard
+/eng/                                               @Azure/azure-sdk-eng
+/eng/common/                                        @Azure/azure-sdk-eng @Azure/azure-sdk-sync-approvers
+/.config/1espt/                                     @Azure/azure-sdk-eng
 /.github/workflows/                                 @Azure/azure-sdk-eng
 /.github/CODEOWNERS                                 @tjprescott @Azure/azure-sdk-eng
 /eng/common/pipelines/codeowners-linter.yml         @tjprescott

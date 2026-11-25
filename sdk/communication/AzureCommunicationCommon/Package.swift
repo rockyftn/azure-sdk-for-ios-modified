@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.5
 //  The swift-tools-version declares the minimum version of Swift required to build this package.
 //
 // --------------------------------------------------------------------------
@@ -32,7 +32,7 @@ import PackageDescription
 let package = Package(
     name: "AzureCommunicationCommon",
     platforms: [
-        .macOS(.v10_15), .iOS(.v12)
+        .macOS(.v10_15), .iOS(.v15)
     ],
     products: [
         .library(name: "AzureCommunicationCommon", targets: ["AzureCommunicationCommon"])
@@ -40,9 +40,9 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "AzureCommunicationCommon",
-            url:"https://github.com/Azure/azure-sdk-for-ios/releases/download/AzureCommunicationCommon_1.3.3/AzureCommunicationCommon_1.3.3.xcframework.zip",
-            checksum: "4694c77d1ef30178197c458195474b78b4e28098c821e0392c420cf5f0762568"
-            )
+            url: "https://github.com/Azure/azure-sdk-for-ios/releases/download/AzureCommunicationCommon_1.3.8/AzureCommunicationCommon_1.3.8.xcframework.zip",
+            checksum: "ebbb99b39f680f5f22abc306562581be2dd6050932c56deed71e212d54868f22"
+        )
     ],
     swiftLanguageVersions: [.v5]
 )

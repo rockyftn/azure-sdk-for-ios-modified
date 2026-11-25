@@ -1,5 +1,53 @@
 # Release History
 
+## 3.0.0 (2026-09-22)
+### Updated major version to 3.0.0.
+
+## 2.18.4 (2026-09-07)
+### Change in swift-tools-version, keeping same for common dependency.      
+
+## 2.18.3 (2026-09-07)
+### Added Xcode 27 support and update in Common SDK new version.      
+
+## 2.18.3-beta.6 (2026-16-06)
+### Added a codesigning step for xcframework to fix the simulator code signing issue.     
+
+## 2.18.3-beta.5 (2026-15-06)
+###  Added a header file of Common SDK     
+
+## 2.18.3-beta.4 (2026-11-06)
+###  Removed the Notices file under xcframework for codesign   
+
+## 2.18.3-beta.3 (2026-05-06)
+###  Bug fixes to support adding with chat sdk  
+
+## 2.18.3-beta.2 (2026-06-10)
+### Platform resolution fix  
+
+## 2.18.2 (2026-03-10)
+### arm64 crash in simulator 
+
+## 2.18.2-beta.2 (2026-03-10)
+### Bug fixes on arm64 crash in simulator 
+
+## 2.18.2-beta.1 (2026-03-06)
+### Bug fixes and new improvements
+### Failure to answer incoming call 
+
+## 2.18.1 (2026-02-05)
+### Bug fixes and new improvements
+### Added SPM support 
+
+## 2.18.0 (2023-10-05)
+### Bug fixes and new improvement
+
+## 2.18.0-beta.1 (2023-10-05)
+
+### Features Added
+* Swift Package Manager (SPM) in new beta release
+
+### Bug Fixes 
+
 ## 2.17.0-beta.3 (2025-11-14)
 ### Bugs Fixed
 * Change of Package.swift to point to AzureCommunicationCommon package.
