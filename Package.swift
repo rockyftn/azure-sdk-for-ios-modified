@@ -58,17 +58,16 @@ let package = Package(
         // AzureCommunicationCalling (Binary)
         .binaryTarget(
             name: "AzureCommunicationCalling",
-            url: "https://github.com/Azure/Communication/releases/download/v2.16.0/AzureCommunicationCalling-2.16.0.zip",
-            checksum: "30706c67938ee54d788aac1f66f4278ff53defb0beea6c9fc7c7567e2027af61"
+            url: "https://github.com/Azure/Communication/releases/download/v3.0.0/AzureCommunicationCalling-3.0.0.zip",
+            checksum: "56e84ebe75b9a12e3906a26c99ca0132c77f6ef57aad41d1d00a1b2b71f0c2a7"
         ),
 
         // AzureCommunicationCommon (Binary)
         .binaryTarget(
             name: "AzureCommunicationCommon",
-            url: "https://github.com/Azure/Communication/releases/download/v3.0.0/AzureCommunicationCalling-3.0.0.zip",
-            checksum: "56e84ebe75b9a12e3906a26c99ca0132c77f6ef57aad41d1d00a1b2b71f0c2a7"
+            url: "https://github.com/Azure/azure-sdk-for-ios/releases/download/AzureCommunicationCommon_1.3.3/AzureCommunicationCommon_1.3.3.xcframework.zip",
+            checksum: "4694c77d1ef30178197c458195474b78b4e28098c821e0392c420cf5f0762568"
         ),
-
         // AzureCommunicationChat (Source)
         .target(
             name: "AzureCommunicationChat",
